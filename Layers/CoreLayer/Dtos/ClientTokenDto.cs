@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CoreLayer.Models.BaseModels;
 
-namespace CoreLayer.Models.JwtModels
+namespace CoreLayer.Dtos
 {
-    public class UserRefreshToken:BaseModel<long>
+    public class ClientTokenDto
     {
-        public string RefreshToken { get; set; }
+        public string AccessToken { get; set; }
         public DateTime Expiration { get; set; }
     }
 }
