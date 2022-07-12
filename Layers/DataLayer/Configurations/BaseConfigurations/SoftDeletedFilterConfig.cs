@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DataLayer.Configurations.BaseFilterConfigurations
 {
-    public abstract  class SoftDeletedFilterConfig<TModel>:IEntityTypeConfiguration<TModel> where TModel:BaseQueryModel
+    public abstract  class SoftDeletedFilterConfig<TModel>:IEntityTypeConfiguration<TModel> where TModel:SoftDeleteModel
     {
         public virtual void Configure(EntityTypeBuilder<TModel> builder)
         {

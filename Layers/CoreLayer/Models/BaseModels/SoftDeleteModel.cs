@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Models.BaseModels
 {
-    public class BaseQueryModel
+    public class SoftDeleteModel
     {
-        public bool IsActive { get; set; } = true;
-        public bool IsDeleted { get; set; } = false;
+        public bool IsActive { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

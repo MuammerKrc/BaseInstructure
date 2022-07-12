@@ -15,6 +15,7 @@ namespace DataLayer.Configurations
         public override void Configure(EntityTypeBuilder<UserRefreshToken> builder)
         {
             base.Configure(builder);
+            builder.HasIndex(i => i.RefreshToken).IncludeProperties(i=>new {i.UserId,i.Expiration});
             builder.Property(i => i.RefreshToken).IsRequired();
         }
     }

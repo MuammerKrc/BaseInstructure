@@ -14,14 +14,11 @@ namespace DataLayer.Repositories
     {
         public DbContext _context;
         public DbSet<TModel> _dbSet;
-
-
         public BaseRepository(DbContext context)
         {
             _context = context;
             _dbSet = context.Set<TModel>();
         }
-
 
         public async Task<TModel> GetByIdAsync(TKey id)
         {
@@ -54,6 +51,7 @@ namespace DataLayer.Repositories
         public async Task Remove(TKey id)
         {
             var result = await GetByIdAsync(id);
+            result.DeletedTime=DateTime.Now;
             result.IsDeleted = true;
         }
     }

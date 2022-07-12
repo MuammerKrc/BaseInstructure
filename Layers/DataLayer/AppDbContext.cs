@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CoreLayer.Models.BaseModels;
 using CoreLayer.Models.IdentityModels;
+using CoreLayer.Models.JwtModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -22,11 +23,12 @@ namespace DataLayer
         {
 
         }
-
+        public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(GetType().Assembly);
         }
+
     }
 }

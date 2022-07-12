@@ -11,5 +11,6 @@ namespace CoreLayer.Models.JwtModels
     {
         public string RefreshToken { get; set; }
         public DateTime Expiration { get; set; }
+        public long UserId { get; set; }
     }
 }
