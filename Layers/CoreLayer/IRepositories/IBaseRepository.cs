@@ -8,7 +8,7 @@ using CoreLayer.Models.BaseModels;
 
 namespace CoreLayer.IRepositories
 {
-    public interface IRepositories<TModel,Tkey> where TModel:BaseModel<Tkey>
+    public interface IBaseRepository<TModel,Tkey> where TModel:BaseModel<Tkey>
     {
         Task<TModel> GetByIdAsync(Tkey id);
         Task<IEnumerable<TModel>> GetAll();
